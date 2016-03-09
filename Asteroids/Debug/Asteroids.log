@@ -1,0 +1,45 @@
+﻿Build started 05/10/2015 18:01:38.
+     1>Project "D:\Programming\C++\Asteroids\Asteroids\Asteroids.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Programs\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\Programming\C++\Asteroids\SFML\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp Menu.cpp Source.cpp SubMenu.cpp
+         Menu.cpp
+         Game.cpp
+     1>d:\programming\c++\asteroids\asteroids\asteroid.h(23): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\programming\c++\asteroids\asteroids\smallasteroid.h(20): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\programming\c++\asteroids\asteroids\ship.h(38): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\programming\c++\asteroids\asteroids\particlesystem.h(29): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\programming\c++\asteroids\asteroids\game.cpp(47): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>d:\programming\c++\asteroids\asteroids\game.cpp(63): warning C4244: 'initializing' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>d:\programming\c++\asteroids\asteroids\game.cpp(64): warning C4244: 'initializing' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>d:\programming\c++\asteroids\asteroids\game.cpp(320): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>d:\programming\c++\asteroids\asteroids\game.cpp(327): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>d:\programming\c++\asteroids\asteroids\game.cpp(363): warning C4804: '>' : unsafe use of type 'bool' in operation
+     1>d:\programming\c++\asteroids\asteroids\game.cpp(367): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\programming\c++\asteroids\asteroids\game.cpp(504): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 d:\programming\c++\asteroids\asteroids\game.cpp(499) : definition of 'i' ignored
+                 d:\programming\c++\asteroids\asteroids\game.cpp(462) : definition of 'i' used
+         Generating Code...
+         Compiling...
+         SubMenu.cpp
+         Source.cpp
+     1>d:\programming\c++\asteroids\asteroids\asteroid.h(23): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\programming\c++\asteroids\asteroids\smallasteroid.h(20): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\programming\c++\asteroids\asteroids\ship.h(38): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\programming\c++\asteroids\asteroids\particlesystem.h(29): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+         Generating Code...
+       Link:
+         D:\Programs\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Programming\C++\Asteroids\Debug\Asteroids.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\Programming\C++\Asteroids\SFML\lib "sfml-graphics-d.lib" "sfml-audio-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Programming\C++\Asteroids\Debug\Asteroids.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Programming\C++\Asteroids\Debug\Asteroids.lib" /MACHINE:X86 Debug\Asteroid.obj
+         Debug\Bullet.obj
+         Debug\Game.obj
+         Debug\Menu.obj
+         Debug\ParticleSystem.obj
+         Debug\Ship.obj
+         Debug\SmallAsteroid.obj
+         Debug\Source.obj
+         Debug\SubMenu.obj
+         Asteroids.vcxproj -> D:\Programming\C++\Asteroids\Debug\Asteroids.exe
+     1>Done Building Project "D:\Programming\C++\Asteroids\Asteroids\Asteroids.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.41

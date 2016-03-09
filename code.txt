@@ -1,0 +1,85 @@
+/*
+        A function that outputs an RGBA colour when given a value between 0 and 1
+         (inc/decrementing the value for "cycle" passed will cycle through the rainbow)
+        You can also define a range to which the output colour is scaled and clamped
+         (useful if you want to cycle through dark/pastel/greyed rainbow colours instead of pure, e.g.)
+           minVal | maxVal | Result
+           0.0    | 256.0  | Colours are fully saturated
+           128.0  | 256.0  | Colours are semi-saturated into white; pastel colours
+           0.0    | 128.0  | Colours are semi-saturated into black; darkened colours
+           96.0   | 144.0  | Colours are distinctly greyed
+           256.0  | 256.0  | Colour will just be white, what are you doing
+           0.0    | 0.0    | Now it's just gone completely black, stop this nonsense
+           128.0  | 128.0  | Something tells me you're not doing this properly
+*/
+ 
+// Need "math.h" for math functions ("cmath" should also be fine, but blegh)
+#include <math.h>
+ 
+// Placeholder colour structure
+struct Colour
+{
+        Colour():r(255),g(255),b(255),a(255){};
+        Colour(int r,int g,int b,int a=255):r(r),g(g),b(b),a(a){};
+        int r; int g; int b; int a;
+}
+ 
+Colour Rainbow(double cycle, int alpha=255, double minVal=0.0, double maxVal=255.0)
+// "alpha" is alpha of output colour,
+// "minVal" and "maxVal" define a range to which the output colour is scaled and clamped
+{
+        // ensure that "cycle" is rotated to a value within [0 <= cycle < 1]
+        while(cycle>=1.0) cycle-=1.0;  while(cycle<0.0) cycle+=1.0;
+        // ensure that "alpha" is a value within [0 <= alpha <= 255]
+        alpha=(alpha<0?0:(alpha>255?255:alpha));
+        // ensure that "minVal" is the smallest of itself and "maxVal"
+        if(minVal>maxVal){ minVal=minVal-maxVal; maxVal=maxVal+minVal; minVal=maxVal-minVal; }
+        // ensure that "minVal" is [>=0] and "maxVal" is [<=255]
+        minVal=(minVal<0?0:minVal); maxVal=(maxVal>255?255:maxVal);
+       
+        // get each of r, g and b given the current value of "cycle"
+        double r = (maxVal-minVal)*(abs((1.0/2.0 - c)*6.0) - 1.0)+minVal;
+        double g = (maxVal-minVal)*(2.0 - abs((1.0/3.0 - c)*6.0))+minVal;
+        double b = (maxVal-minVal)*(2.0 - abs((2.0/3.0 - c)*6.0))+minVal;
+        // ensure they're clamped between the minimum and maximum values
+        r = (r<minVal?minVal:(r>maxVal?maxVal:r));
+        g = (g<minVal?minVal:(g>maxVal?maxVal:g));
+        b = (b<minVal?minVal:(b>maxVal?maxVal:b));
+       
+        // To output for another format, rewrite this line and change the return type as necessary
+        return Colour( static_cast<int>(r), static_cast<int>(g), static_cast<int>(b), alpha );
+}
+
+if (type == 0)
+		{
+			if (velocity.x < 0 && velocity.y < 0)
+			{
+				for (int i = 0; i < particleVector.size(); ++i)
+				{
+					if (particleVector[i]->velocity.x < 0)
+						particleVector[i]->velocity.x = -particleVector[i]->velocity.x;
+					if (particleVector[i]->velocity.y < 0)
+						particleVector[i]->velocity.y = -particleVector[i]->velocity.y;
+				}
+			}
+			if (velocity.x < 0 && velocity.y > 0)
+			{
+				for (int i = 0; i < particleVector.size(); ++i)
+				{
+					if (particleVector[i]->velocity.x < 0)
+						particleVector[i]->velocity.x = -particleVector[i]->velocity.x;
+					if (particleVector[i]->velocity.y > 0)
+						particleVector[i]->velocity.y = -particleVector[i]->velocity.y;
+				}
+			}
+			if (velocity.x > 0 && velocity.y < 0)
+			{
+				for (int i = 0; i < particleVector.size(); ++i)
+				{
+					if (particleVector[i]->velocity.x > 0)
+						particleVector[i]->velocity.x = -particleVector[i]->velocity.x;
+					if (particleVector[i]->velocity.y < 0)
+						particleVector[i]->velocity.y = -particleVector[i]->velocity.y;
+				}
+			}
+		}
